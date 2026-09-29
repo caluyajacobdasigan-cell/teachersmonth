@@ -1,0 +1,187 @@
+ body {
+    background-image: url(skies.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    margin: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    gap: 400px;
+ }  
+
+ .box {
+    height: 300px;
+    width: 500px;
+
+    background-color: #800020;
+    border-radius: 40px;
+
+    box-sizing: border-box;
+    padding: 40px;
+
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+
+    text-align: center;
+
+    margin: 100px auto;
+
+    transition: transform 0.5s ease;
+    cursor: pointer;
+
+    z-index: 1;
+
+}
+
+.box:hover {
+    transform: scale(3);
+    z-index: 10;
+}
+
+.letter {
+    width: 450px;
+    max-width: 90vw;
+
+    height: 200px;
+    max-height: 80vh;
+
+    background-color: #fff8e7;
+
+    position: absolute;
+    bottom: -180px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 40px;
+
+    transition: bottom 0.8s ease;
+
+    overflow: hidden;
+
+    z-index: 1;
+}
+
+
+.box:hover .letter {
+    bottom: 30px;
+}
+
+.letter-content {
+    flex: 1;
+
+    min-height: 0;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+    padding: 20px;
+
+    box-sizing: border-box;
+
+    overflow-wrap: break-word;
+    word-break: normal;
+}
+
+.letter-content p{
+   text-align: justify;
+}
+
+.flap {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 0;
+    height: 0;
+
+    border-left: 250px solid transparent;
+    border-right: 250px solid transparent;
+    border-top: 180px solid #a0002a;
+
+    z-index: 3;
+
+    transform-origin: top;
+    transition: transform 0.6s ease;
+}
+
+.box:hover .flap {
+    transform: rotateX(180deg);
+}
+
+.profile-pic {
+    width: 120px;
+    height: 120px;
+
+    object-fit: cover;
+    border-radius: 40%;
+
+    display: block;
+    margin-top: 10px;
+}
+
+#heart-rain {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    pointer-events: none;
+    overflow: hidden;
+
+    z-index: 9999;
+}
+
+.falling-heart {
+    position: absolute;
+    top: -50px;
+    font-size: 25px;
+    animation: fall linear forwards;
+
+}
+
+@keyframes fall {
+    0% {
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+    }
+
+    50% {
+        transform: translateY(55vh) translateX(30px) rotate(180deg);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(110vh) translateX(-30px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+footer {
+    width: 111.7%;
+    min-height: 150;
+
+    background-color: #800020;
+    color: #fff8e7;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+}
+
+
